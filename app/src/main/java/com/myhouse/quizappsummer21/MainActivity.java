@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -16,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     TextView myQuestion;
     Button myTrue;
     Button myFalse;
+    Button myEmailBTN;
     Button myFinish;
     Button myNext;
 
@@ -41,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
         myFalse = (Button) findViewById(R.id.falseBTN);
         myFinish = (Button) findViewById(R.id.finishBTN);
         myNext = (Button) findViewById(R.id.nextBTN);
+        myEmailBTN = (Button) findViewById(R.id.sendEmailBTN);
         //message text for toast
         messageText = "";
         score = 0;
@@ -48,11 +51,11 @@ public class MainActivity extends AppCompatActivity {
         //initialize variables for questions
 
         //q0 = new Question("Click next question for first question",true);
-        q1 = new Question("This is a computer science class",true);
-        q2 = new Question("We are learning python",false);
-        q3 = new Question("Our IDE is Visual Studio Code",false);
-        q4 = new Question("We will develop applications for android devices",true);
-        q5 = new Question("App Development 1 is fun",true);
+        q1 = new Question(getString(R.string.q1Txt),true);
+        q2 = new Question(getString(R.string.q2Txt),false);
+        q3 = new Question(getString(R.string.q3Txt),false);
+        q4 = new Question(getString(R.string.q4Txt),true);
+        q5 = new Question(getString(R.string.q5Txt),true);
         questions = new Question[] {q1,q2,q3,q4,q5};
         //seems a bit redundant
         currentQindx = 0;
@@ -81,12 +84,12 @@ public class MainActivity extends AppCompatActivity {
                                       public void onClick(View v) {
                                           // confirm boolean == true
                                          if (questions[currentQindx].isCorrectAnswer()) {
-                                             messageText = "You are correct!";
+                                             messageText = getString(R.string.correctMessageTxt);
                                              score += 1;
                                              durationToast = Toast.LENGTH_LONG;
                                          }
                                          else {
-                                             messageText = "Sorry, this is not correct!";
+                                             messageText = getString(R.string.wrongMessageTxt);
                                              durationToast = Toast.LENGTH_SHORT;
 
                                          }
@@ -104,12 +107,12 @@ public class MainActivity extends AppCompatActivity {
                                       @Override
                                       public void onClick(View v) {
                                           if (!questions[currentQindx].isCorrectAnswer()) {
-                                              messageText = "You are correct!";
+                                              messageText = getString(R.string.correctMessageTxt);
                                               score += 1;
                                               durationToast = Toast.LENGTH_LONG;
                                           }
                                           else {
-                                              messageText = "Sorry, this is not correct!";
+                                              messageText = getString(R.string.wrongMessageTxt);
                                               durationToast = Toast.LENGTH_SHORT;
 
                                           }
@@ -151,11 +154,37 @@ public class MainActivity extends AppCompatActivity {
                                          //INTENT data type   variable name  = new data type  (from, to)
                                          Intent openScoreTENT = new Intent(MainActivity.this, ScoreActivity.class);
                                          //passes the score data to the new screen
-                                          openScoreTENT.putExtra("scoreDATA",score);
+
+                                         openScoreTENT.putExtra("scoreDATA",score);
                                          startActivity(openScoreTENT);
                                       }
                                   }
         );
+        myEmailBTN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String[] addresses = new String[]{"mervoCS@gmail.com"};
+                String subject = getString(R.string.emailMessageTxt);
+                String body = getString(R.string.emailMessageTxt) + " " + score +"\n\n\t\t- " + getString(R.string.app_name);
+
+                composeEmail(addresses, subject, body);
+            }
+        });
+
+
 
     }
+
+    private void composeEmail(String[] addresses, String subject, String body) {
+        Intent intent = new Intent(Intent.ACTION_SENDTO);
+        intent.setData(Uri.parse("mailto:")); // only email apps should handle this
+        intent.putExtra(Intent.EXTRA_EMAIL, addresses);
+        intent.putExtra(Intent.EXTRA_SUBJECT, subject);
+        intent.putExtra(Intent.EXTRA_TEXT, body);
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        }
+    }
+
+
 }

@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">QuizAppSummer21</string>
+    <string name="initTextString">Click Next Question to get the first Question</string>
+    <string name="trueBtnTXT">True</string>
+    <string name="falseBtnText">False</string>
+    <string name="emailBtnText">send Email with Score</string>
+    <string name="nextBtnText">Next Question</string>
+    <string name="finishBtnText">Click when done playing.</string>
+
+    <string name="q1Txt">This is a computer science class.</string>
+    <string name="q2Txt">We are learning python.</string>
+    <string name="q3Txt">Our IDE is Visual Studio Codes.</string>
+    <string name="q4Txt">We will develop applications for android devices.</string>
+    <string name="q5Txt">App Development 1 course is fun.</string>
+
+    <string name="correctMessageTxt">You are Correct!</string>
+    <string name="wrongMessageTxt">Sorry, that is not correct.</string>
+    <string name="emailMessageTxt">New score on the Summer 2021 Quiz App. Your score: </string>
+
 </resources>

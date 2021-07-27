@@ -25,6 +25,13 @@
         android:text="0"
         android:textSize="24sp" />
 
+    <Button
+        android:id="@+id/sendEmailBTN2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/emailBtnText"
+        android:visibility="visible" />
+
 
 
 </LinearLayout>
