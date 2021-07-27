@@ -3,6 +3,7 @@ package com.myhouse.quizappsummer21;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -61,7 +62,17 @@ public class MainActivity extends AppCompatActivity {
                                   }
         );
 
-
+        myFinish.setOnClickListener(new View.OnClickListener() {
+                                      @Override
+                                      public void onClick(View v) {
+                                         //INTENT data type   variable name  = new data type  (from, to)
+                                         Intent openScoreTENT = new Intent(MainActivity.this, ScoreActivity.class);
+                                         //passes the score data to the new screen
+                                          openScoreTENT.putExtra("scoreDATA",score);
+                                         startActivity(openScoreTENT);
+                                      }
+                                  }
+        );
 
     }
 }
