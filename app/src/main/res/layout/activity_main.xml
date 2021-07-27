@@ -16,7 +16,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="casual"
-        android:text="Is this a question?"
+        android:text="Click Next Question to get the first Question"
         android:textSize="24sp" />
 
 
@@ -30,7 +30,8 @@
         android:id="@+id/trueBTN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="True" />
+        android:text="True"
+        android:visibility="visible" />
 
 
     <!-- This is the toggle switch for the quiz-->
@@ -38,24 +39,21 @@
         android:id="@+id/falseBTN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="False" />
+        android:text="False"
+        android:visibility="visible" />
+
 
     <Button
+        android:id="@+id/nextBTN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text = "Next Question" />
+
+    <Button
         android:id="@+id/finishBTN"
-        android:text="Click when done playing."/>
-
-
-    <ToggleButton
-        android:id="@+id/changeTGL"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textOff="Not Finished"
-        android:textOn="Finished" />
-
-
-
+        android:text="Click when done playing." />
 
 
 </LinearLayout>

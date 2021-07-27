@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.ToggleButton;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,8 +17,16 @@ public class MainActivity extends AppCompatActivity {
     Button myTrue;
     Button myFalse;
     Button myFinish;
+    Button myNext;
 
-    ToggleButton myToggle;
+    //Toast initial values
+    String messageText;
+    int durationToast;
+
+    //Question instances and other variables
+    Question q0,q1,q2,q3,q4,q5, currentQ;
+    Question[] questions;
+    int currentQindx;
 
     int score;
 
@@ -27,13 +35,32 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //initialize origin variables
         myQuestion = (TextView) findViewById(R.id.questionTXT);
         myTrue = (Button) findViewById(R.id.trueBTN);
         myFalse = (Button) findViewById(R.id.falseBTN);
         myFinish = (Button) findViewById(R.id.finishBTN);
-        myToggle = (ToggleButton) findViewById(R.id.changeTGL);
+        myNext = (Button) findViewById(R.id.nextBTN);
+        //message text for toast
+        messageText = "";
         score = 0;
 
+        //initialize variables for questions
+
+        //q0 = new Question("Click next question for first question",true);
+        q1 = new Question("This is a computer science class",true);
+        q2 = new Question("We are learning python",false);
+        q3 = new Question("Our IDE is Visual Studio Code",false);
+        q4 = new Question("We will develop applications for android devices",true);
+        q5 = new Question("App Development 1 is fun",true);
+        questions = new Question[] {q1,q2,q3,q4,q5};
+        //seems a bit redundant
+        currentQindx = 0;
+        currentQ = questions[currentQindx];
+        //Initialize Question on xml
+        myQuestion.setText(q1.getQuestionText());
+
+        /*  Code after version 0.1
         myTrue.setOnClickListener(new View.OnClickListener() {
                                       @Override
                                       public void onClick(View v) {
@@ -47,21 +74,77 @@ public class MainActivity extends AppCompatActivity {
                                       }
                                   }
         );
+         */
+
+        myTrue.setOnClickListener(new View.OnClickListener() {
+                                      @Override
+                                      public void onClick(View v) {
+                                          // confirm boolean == true
+                                         if (questions[currentQindx].isCorrectAnswer()) {
+                                             messageText = "You are correct!";
+                                             score += 1;
+                                             durationToast = Toast.LENGTH_LONG;
+                                         }
+                                         else {
+                                             messageText = "Sorry, this is not correct!";
+                                             durationToast = Toast.LENGTH_SHORT;
+
+                                         }
+
+                                          Context context = getApplicationContext();
+
+                                          Toast toast = Toast.makeText(context, messageText, durationToast);
+                                          toast.show();
+                                      }
+                                  }
+        );
+
 
         myFalse.setOnClickListener(new View.OnClickListener() {
                                       @Override
                                       public void onClick(View v) {
-                                          Context context = getApplicationContext();
-                                          CharSequence text = "Sorry, this is not correct!";
-                                          int duration = Toast.LENGTH_SHORT;
+                                          if (!questions[currentQindx].isCorrectAnswer()) {
+                                              messageText = "You are correct!";
+                                              score += 1;
+                                              durationToast = Toast.LENGTH_LONG;
+                                          }
+                                          else {
+                                              messageText = "Sorry, this is not correct!";
+                                              durationToast = Toast.LENGTH_SHORT;
 
-                                          Toast toast = Toast.makeText(context, text, duration);
+                                          }
+
+
+
+                                          Context context = getApplicationContext();
+                                          Toast toast = Toast.makeText(context, messageText, durationToast);
                                           toast.show();
 
                                       }
                                   }
         );
 
+        myNext.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View v) {
+                                        //Something is not correct the questions.length should work with < but is not.
+                                        if (currentQindx < questions.length-1)
+                                        {
+                                            currentQindx++;
+                                            currentQ = questions[currentQindx];
+                                            myQuestion.setText(currentQ.getQuestionText());
+                                        }
+
+                                        else {
+                                            //INTENT data type   variable name  = new data type  (from, to)
+                                            Intent openScoreTENT = new Intent(MainActivity.this, ScoreActivity.class);
+                                            //passes the score data to the new screen
+                                            openScoreTENT.putExtra("scoreDATA", score);
+                                            startActivity(openScoreTENT);
+                                        }
+                                        }
+                                    }
+        );
         myFinish.setOnClickListener(new View.OnClickListener() {
                                       @Override
                                       public void onClick(View v) {
