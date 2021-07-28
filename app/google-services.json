@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1035444603785",
+    "project_id": "quizappsum21",
+    "storage_bucket": "quizappsum21.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1035444603785:android:315d6c50d1f4bc7cf52f58",
+        "android_client_info": {
+          "package_name": "com.myhouse.quizappsummer21"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1035444603785-2j1s6ma7ouuf55vnhkb3ifqp6c4hbd35.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBzTWYELUD9P96TwzfIXLn9zAjNs1F5bwk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1035444603785-2j1s6ma7ouuf55vnhkb3ifqp6c4hbd35.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
