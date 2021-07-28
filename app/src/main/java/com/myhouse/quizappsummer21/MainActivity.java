@@ -17,7 +17,6 @@ public class MainActivity extends AppCompatActivity {
     TextView myQuestion;
     Button myTrue;
     Button myFalse;
-    Button myEmailBTN;
     Button myFinish;
     Button myNext;
 
@@ -43,7 +42,6 @@ public class MainActivity extends AppCompatActivity {
         myFalse = (Button) findViewById(R.id.falseBTN);
         myFinish = (Button) findViewById(R.id.finishBTN);
         myNext = (Button) findViewById(R.id.nextBTN);
-        myEmailBTN = (Button) findViewById(R.id.sendEmailBTN);
         //message text for toast
         messageText = "";
         score = 0;
@@ -160,31 +158,12 @@ public class MainActivity extends AppCompatActivity {
                                       }
                                   }
         );
-        myEmailBTN.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String[] addresses = new String[]{"mervoCS@gmail.com"};
-                String subject = getString(R.string.emailMessageTxt);
-                String body = getString(R.string.emailMessageTxt) + " " + score +"\n\n\t\t- " + getString(R.string.app_name);
-
-                composeEmail(addresses, subject, body);
-            }
-        });
 
 
 
     }
 
-    private void composeEmail(String[] addresses, String subject, String body) {
-        Intent intent = new Intent(Intent.ACTION_SENDTO);
-        intent.setData(Uri.parse("mailto:")); // only email apps should handle this
-        intent.putExtra(Intent.EXTRA_EMAIL, addresses);
-        intent.putExtra(Intent.EXTRA_SUBJECT, subject);
-        intent.putExtra(Intent.EXTRA_TEXT, body);
-        if (intent.resolveActivity(getPackageManager()) != null) {
-            startActivity(intent);
-        }
-    }
 
+    
 
 }

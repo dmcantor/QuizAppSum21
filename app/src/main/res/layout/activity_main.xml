@@ -54,12 +54,6 @@
         android:layout_height="wrap_content"
         android:text="@string/finishBtnText" />
 
-    <Button
-        android:id="@+id/sendEmailBTN"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/emailBtnText"
-        android:visibility="visible" />
 
 
 </LinearLayout>
