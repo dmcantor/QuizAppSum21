@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">QuizAppSummer21</string>
+    <string name="initTextString">Haga clic en Siguiente pregunta para obtener la primera pregunta</string>
+    <string name="trueBtnTXT">Verdadero</string>
+    <string name="falseBtnText">Falso</string>
+    <string name="emailBtnText">Enviar correo electrónico con puntuación</string>
+    <string name="nextBtnText">Siguiente pregunta</string>
+    <string name="finishBtnText">Haga clic cuando haya terminado de jugar.</string>
+
+    <string name="q1Txt">Esta es una clase de ciencias de la computación.</string>
+    <string name="q2Txt">Estamos aprendiendo python.</string>
+    <string name="q3Txt">Nuestro IDE es Visual Studio Codes.</string>
+    <string name="q4Txt">Desarrollaremos aplicaciones para dispositivos Android.</string>
+    <string name="q5Txt">El curso de Desarrollo de Aplicaciones 1 es divertido.</string>
+
+    <string name="correctMessageTxt">¡Tienes razón!</string>
+    <string name="wrongMessageTxt">Lo sentimos, eso no es correcto.</string>
+    <string name="emailMessageTxt">Nueva puntuación en la Aplicación Quiz verano 2021.Su puntuación: </string>
+
+    <string name="score">puntuación</string>
+
+    <string name ="englishBtnTxt">English</string>
+    <string name ="espanolBtnTxt">Espanol</string>
+    <string name ="franciasBtnTxt">Francias</string>
+
+</resources>

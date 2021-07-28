@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LinearLayout xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:orientation="vertical"
+    android:gravity="center"
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    tools:ignore="ExtraText">
+
+
+<Button
+android:id="@+id/btnEnglish"
+android:layout_width="56dp"
+android:layout_height="56dp"
+android:layout_marginTop="40dp"
+android:text="@string/englishBtnTxt"
+android:textAllCaps="false"
+    />
+<Button
+android:id="@+id/btnEspanol"
+android:layout_width="56dp"
+android:layout_height="56dp"
+android:layout_marginTop="40dp"
+android:text="@string/espanolBtnTxt"
+android:textAllCaps="false"
+    />
+
+<Button
+android:id="@+id/btnFrancias"
+android:layout_width="56dp"
+android:layout_height="56dp"
+android:layout_marginTop="40dp"
+android:text="@string/franciasBtnTxt"
+android:textAllCaps="false"
+    />
+    </LinearLayout>
