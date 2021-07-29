@@ -18,9 +18,13 @@
     <string name="wrongMessageTxt">Désolé, ce n’est pas correct.</string>
     <string name="emailMessageTxt">Nouveau score sur l’application quiz de l’été 2021. Votre score :0. </string>
 
+
+    <string name="score">Score</string>
+    <string name ="restartBtnTxt">Redémarrer</string>
+
     <string name ="englishBtnTxt">English</string>
     <string name ="espanolBtnTxt">Espanol</string>
     <string name ="franciasBtnTxt">Francias</string>
-    <string name="score">Score</string>
+
 
 </resources>

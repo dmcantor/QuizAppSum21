@@ -18,7 +18,8 @@
     <string name="wrongMessageTxt">Lo sentimos, eso no es correcto.</string>
     <string name="emailMessageTxt">Nueva puntuación en la Aplicación Quiz verano 2021.Su puntuación: </string>
 
-    <string name="score">puntuación</string>
+    <string name="score">Puntuación</string>
+    <string name="restartBtnTxt">Reiniciar</string>
 
     <string name ="englishBtnTxt">English</string>
     <string name ="espanolBtnTxt">Espanol</string>

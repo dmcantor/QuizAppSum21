@@ -18,6 +18,7 @@
     <string name="emailMessageTxt">New score on the Summer 2021 Quiz App. Your score: </string>
 
     <string name="score">Score</string>
+    <string name="restartBtnTxt">Restart</string>
 
     <string name ="englishBtnTxt">English</string>
     <string name ="espanolBtnTxt">Espanol</string>

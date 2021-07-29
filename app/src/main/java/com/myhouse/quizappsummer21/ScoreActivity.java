@@ -14,6 +14,7 @@ public class ScoreActivity extends AppCompatActivity {
     int scoreDisp;
     TextView scoreTXT;
     Button myEmailBTN2;
+    Button myRestartBTN;
     Intent incomingScoreVal;
 
     @Override
@@ -28,6 +29,7 @@ public class ScoreActivity extends AppCompatActivity {
         //Not Python, you need to convert int to string
         scoreTXT.setText(""+scoreDisp);
         myEmailBTN2 = (Button) findViewById(R.id.sendEmailBTN2);
+        myRestartBTN = (Button) findViewById(R.id.restartBTN);
 
         myEmailBTN2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,6 +39,19 @@ public class ScoreActivity extends AppCompatActivity {
                 String body = getString(R.string.emailMessageTxt) + " " + scoreDisp +"\n\n\t\t- " + getString(R.string.app_name);
 
                 composeEmail(addresses, subject, body);
+            }
+        });
+
+        myRestartBTN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //INTENT data type   variable name  = new data type  (from, to)
+                Intent returnTENT = new Intent(ScoreActivity.this, MainActivity.class);
+                //passes the score data to the new screen
+
+                startActivity(returnTENT);
+
+
             }
         });
 
