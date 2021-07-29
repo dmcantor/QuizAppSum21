@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">QuizAppSummer21</string>
     <string name="initTextString">Click Next Question to get the first Question</string>
@@ -26,6 +27,4 @@
     <string name="englishBtnTxt">English</string>
     <string name="espanolBtnTxt">Espanol</string>
     <string name="franciasBtnTxt">Francais</string>
-
-
 </resources>

@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "1035444603785",
-    "project_id": "quizappsum21",
-    "storage_bucket": "quizappsum21.appspot.com"
+    "project_number": "64506864315",
+    "project_id": "testquizapp-b6c67",
+    "storage_bucket": "testquizapp-b6c67.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1035444603785:android:315d6c50d1f4bc7cf52f58",
+        "mobilesdk_app_id": "1:64506864315:android:96031de1a784f645087f9e",
         "android_client_info": {
           "package_name": "com.myhouse.quizappsummer21"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1035444603785-2j1s6ma7ouuf55vnhkb3ifqp6c4hbd35.apps.googleusercontent.com",
+          "client_id": "64506864315-vh8vnvuia3irm2ql1mk5j3mbb0grrb8d.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBzTWYELUD9P96TwzfIXLn9zAjNs1F5bwk"
+          "current_key": "AIzaSyBWi1yculDpDxbhvtSwicBIxXit7kgD0xc"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1035444603785-2j1s6ma7ouuf55vnhkb3ifqp6c4hbd35.apps.googleusercontent.com",
+              "client_id": "64506864315-vh8vnvuia3irm2ql1mk5j3mbb0grrb8d.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

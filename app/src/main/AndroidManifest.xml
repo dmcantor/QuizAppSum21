@@ -9,8 +9,9 @@
         android:roundIcon="@mipmap/mervomustang"
         android:supportsRtl="true"
         android:theme="@style/Theme.QuizAppSummer21">
-        <activity android:name=".ScoreActivity"></activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity" />
+        <activity android:name=".ScoreActivity" />
+        <activity android:name=".startScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
