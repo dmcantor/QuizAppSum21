@@ -2,6 +2,7 @@ package com.myhouse.quizappsummer21;
 
 public class Question {
     String questionText;
+    String hintText;
     boolean correctAnswer;
 
     //alt+insert created all constructors and methods using auto tool

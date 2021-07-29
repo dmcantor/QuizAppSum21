@@ -21,6 +21,9 @@
     <string name="score">Puntuación</string>
     <string name="restartBtnTxt">Reiniciar</string>
 
+    <string name="welcomeTXT">Esta es la aplicación Quiz Summer 2021</string>
+    <string name="startBtnTxt">Comenzar la aplicación</string>
+
     <string name ="englishBtnTxt">English</string>
     <string name ="espanolBtnTxt">Espanol</string>
     <string name ="franciasBtnTxt">Francias</string>
