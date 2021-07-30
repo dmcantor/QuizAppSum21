@@ -1,12 +1,13 @@
 package com.myhouse.quizappsummer21;
 import com.google.firebase.database.IgnoreExtraProperties;
-import java.util.Comparator;
+import java.lang.Comparable;
+
 
 import javax.xml.namespace.QName;
 
 @IgnoreExtraProperties
 
-public class HighScoreCls {
+public class HighScoreCls implements Comparable<HighScoreCls> {
     public String name, date;
     public int score;
 
@@ -41,6 +42,16 @@ public class HighScoreCls {
 
     public void setScore(int score) {
         this.score = score;
+    }
+
+    @Override
+    public int compareTo(HighScoreCls o) {
+        return this.score - ((HighScoreCls)o).getScore();
+            }
+
+    public boolean equals(HighScoreCls o) {
+        return this.compareTo(o)==0 && this.name.equals(((HighScoreCls)o).getName())
+                && this.date.equals(((HighScoreCls)o).getDate());
     }
 
     @Override
