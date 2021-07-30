@@ -32,6 +32,12 @@
         android:text="@string/startBtnTxt"
         android:visibility="visible" />
 
-
+    <EditText
+        android:id="@+id/entNameTXT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="casual"
+        android:hint="@string/enterNameTXT"
+        android:textSize="24sp" />
 
 </LinearLayout>

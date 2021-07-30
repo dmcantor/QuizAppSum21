@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 
@@ -31,9 +32,12 @@ public class ScoreActivity extends AppCompatActivity {
 
     int scoreDisp;
     TextView scoreTXT;
+
     Button myEmailBTN2;
     Button myRestartBTN;
     Intent incomingScoreVal;
+    String playerName,pNameS;
+
     HighScoreCls highscore,sortHighscore;
 
     //Its late I am brute forcing this
@@ -55,6 +59,8 @@ public class ScoreActivity extends AppCompatActivity {
         //Get score from other activity for use in this activity
         scoreTXT = (TextView) findViewById(R.id.scoreUPT);
         incomingScoreVal = getIntent();
+        playerName = incomingScoreVal.getStringExtra("playName");
+        //Log.d("AGRGGACTIVIT",playerName);
         scoreDisp = incomingScoreVal.getIntExtra("scoreDATA", 0);
 
         //This is NOT Python, you need to convert int to string
@@ -82,9 +88,9 @@ public class ScoreActivity extends AppCompatActivity {
         //get the date for the High Score table -- not used at the moment
         SimpleDateFormat sdf = new SimpleDateFormat("MM.dd.yyyy");
         String currentDate = sdf.format(new Date());
-
+        pNameS = playerName;
         //create instance of HighScore class and create arraylist to store data
-        highscore=new HighScoreCls(scoreDisp,"test name",currentDate);
+        highscore=new HighScoreCls(scoreDisp,pNameS,currentDate);
         myHighScores = new ArrayList<HighScoreCls>();
 
         DatabaseReference myRef = database.getReference("High Score");
@@ -107,11 +113,11 @@ public class ScoreActivity extends AppCompatActivity {
                     //contains a customer object
                     HighScoreCls myHighScore = highScoresSnapShot.getValue(HighScoreCls.class);
                     myHighScores.add(myHighScore);
-                    Log.d("NICKISANNOYING()", myHighScore.toString());
+                    //Log.d("NICKISANNOYING()", myHighScore.toString());
                 }
 
                 Collections.sort(myHighScores);
-                Log.d("SORTEDSORTED", myHighScores.toString());
+                //Log.d("SORTEDSORTED", myHighScores.toString());
 
 
                 highscore=myHighScores.get(myHighScores.size()-1);
@@ -124,7 +130,7 @@ public class ScoreActivity extends AppCompatActivity {
                 score2.setText(""+highscore.getScore());
                 scorer2.setText(""+highscore.getName());
 
-                 
+
             }
 
             @Override
@@ -152,7 +158,7 @@ public class ScoreActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //INTENT data type   variable name  = new data type  (from, to)
-                Intent returnTENT = new Intent(ScoreActivity.this, MainActivity.class);
+                Intent returnTENT = new Intent(ScoreActivity.this, startScreen.class);
                 //passes the score data to the new screen
 
                 startActivity(returnTENT);

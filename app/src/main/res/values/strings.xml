@@ -36,7 +36,7 @@
     <string name="namehighscore2">NameHighScore2</string>
     <string name="scorehighscore1">scoreHighScore1</string>
     <string name="namehighscore1">NameHighScore1</string>
-
+    <string name="enterNameTXT">Type your name for High Score List</string>
 
 
 </resources>

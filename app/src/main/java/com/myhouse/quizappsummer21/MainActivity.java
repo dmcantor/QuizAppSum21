@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -22,15 +23,18 @@ public class MainActivity extends AppCompatActivity {
     Button myFalse;
     Button myFinish;
     Button myNext;
+    Intent incomingPlayerName;
 
     //Toast initial values
     String messageText;
+
     int durationToast;
 
     //Question instances and other variables
     Question q0,q1,q2,q3,q4,q5, currentQ;
     Question[] questions;
     int currentQindx;
+    String pName;
 
     int score;
 
@@ -38,6 +42,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+        incomingPlayerName = getIntent();
+        pName = incomingPlayerName.getStringExtra("playerName");
+        Log.d("AGRGGGG",pName);
 
 
 
@@ -147,6 +156,7 @@ public class MainActivity extends AppCompatActivity {
                                             Intent openScoreTENT = new Intent(MainActivity.this, ScoreActivity.class);
                                             //passes the score data to the new screen
                                             openScoreTENT.putExtra("scoreDATA", score);
+                                            openScoreTENT.putExtra("playName",pName);
                                             startActivity(openScoreTENT);
                                         }
                                         }
@@ -158,7 +168,7 @@ public class MainActivity extends AppCompatActivity {
                                          //INTENT data type   variable name  = new data type  (from, to)
                                          Intent openScoreTENT = new Intent(MainActivity.this, ScoreActivity.class);
                                          //passes the score data to the new screen
-
+                                         openScoreTENT.putExtra("playName",pName);
                                          openScoreTENT.putExtra("scoreDATA",score);
                                          startActivity(openScoreTENT);
                                       }
