@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+<<<<<<< HEAD
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -21,6 +22,10 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Date;
+=======
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+>>>>>>> 041a319c577384b9fc9c9dcb77b8ee911d026dd5
 
 public class ScoreActivity extends AppCompatActivity {
 
@@ -57,6 +62,7 @@ public class ScoreActivity extends AppCompatActivity {
         myEmailBTN2 = (Button) findViewById(R.id.sendEmailBTN2);
         myRestartBTN = (Button) findViewById(R.id.restartBTN);
 
+<<<<<<< HEAD
         //Yes. this should be an array but I am too tired to think
         scorer0 = (TextView) findViewById(R.id.scoreN1);
         scorer1 = (TextView) findViewById(R.id.scoreN2);
@@ -117,6 +123,14 @@ public class ScoreActivity extends AppCompatActivity {
                 Log.w("FAILEDTOREAD", "Failed to read value.", error.toException());
             }
         });
+=======
+
+        //Writes a value at the database
+        //Gets a reference for an object at 'message'
+        DatabaseReference myRef = database.getReference("High Score");
+        myRef.setValue(scoreDisp);
+
+>>>>>>> 041a319c577384b9fc9c9dcb77b8ee911d026dd5
 
         myEmailBTN2.setOnClickListener(new View.OnClickListener() {
             @Override

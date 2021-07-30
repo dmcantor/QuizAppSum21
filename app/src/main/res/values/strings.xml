@@ -26,6 +26,7 @@
     <string name="englishBtnTxt">English</string>
     <string name="espanolBtnTxt">Espanol</string>
     <string name="franciasBtnTxt">Francais</string>
+<<<<<<< HEAD
 
     <string name="leftColTXT">High Scorer</string>
     <string name="rightColTXT">Score</string>
@@ -35,6 +36,8 @@
     <string name="namehighscore2">NameHighScore2</string>
     <string name="scorehighscore1">scoreHighScore1</string>
     <string name="namehighscore1">NameHighScore1</string>
+=======
+>>>>>>> 041a319c577384b9fc9c9dcb77b8ee911d026dd5
 
 
 </resources>
