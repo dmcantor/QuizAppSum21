@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
+
 <LinearLayout xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,6 +9,70 @@
 
     xmlns:android="http://schemas.android.com/apk/res/android"
     tools:ignore="ExtraText">
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="1"
+        android:textColor="#3F51B5" >
+        <TableRow>
+            <TextView
+                android:text="@string/leftColTXT"
+                android:gravity="center"
+                android:padding="3dip"
+                android:textColor="#3F51B5" />
+
+            <TextView
+                android:padding="3dip"
+                android:text="@string/rightColTXT"
+                android:gravity="center"
+                android:textColor="#3F51B5"
+                />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:id="@+id/scoreN1"
+                android:text="@string/namehighscore1"
+                android:gravity="center"
+                android:padding="3dip" />
+            <TextView
+                android:id="@+id/score1"
+                android:text="@string/scorehighscore1"
+                android:gravity="center"
+                android:padding="3dip" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:id="@+id/scoreN2"
+                android:text="@string/namehighscore2"
+                android:gravity="center"
+                android:padding="3dip" />
+            <TextView
+                android:id="@+id/score2"
+                android:text="@string/scorehighscore2"
+                android:gravity="center"
+                android:padding="3dip" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:id="@+id/scoreN3"
+                android:text="@string/namehighscore3"
+                android:gravity="center"
+                android:padding="3dip" />
+            <TextView
+                android:id="@+id/score3"
+                android:text="@string/scorehighscore3"
+                android:gravity="center"
+                android:padding="3dip" />
+        </TableRow>
+    </TableLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="casual"
+        android:textSize="24sp" />
 
     <TextView
         android:id="@+id/scoreTXT"
@@ -38,7 +103,6 @@
         android:layout_height="wrap_content"
         android:text="@string/restartBtnTxt"
         android:visibility="visible" />
-
 
 
 </LinearLayout>
